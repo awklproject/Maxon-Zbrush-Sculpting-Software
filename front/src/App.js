@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 // TODO : change when uploading online
-const getOffersLink = "http://localhost:8000/list/";
+const mainSite = "http://localhost:8000";
+const getOffersLink = `${mainSite}/list/`; 
+
 
 const OffersList = () => {
   const [offers, setOffers] = useState([]);
@@ -30,15 +32,15 @@ const OffersList = () => {
 
 const OfferCard = ({ offer }) => {
   return (
-    <div className="offer-card">
-      <h2>{offer.supplier_name}</h2>
-      <p>Description: {offer.description}</p>
-      <p>Unit: {offer.unit}</p>
-      <p>Stock: {offer.stock}</p>
-      <p>Price per Unit: {offer.price_per_unit}</p>
-      <p>Location: <a href={offer.location} target="_blank" rel="noopener noreferrer">{offer.location}</a></p>
-      <p>Review: <a href={offer.review} target="_blank" rel="noopener noreferrer">{offer.review}</a></p>
-      <img src={`http://your-django-api-endpoint${offer.pic}`} alt="Offer"/>
+    <div className="offer-card card-body">
+      <h2 className="card-title">{offer.supplier_name}</h2>
+      <p className="card-text">Description: {offer.description}</p>
+      <p className="card-text">Unit: {offer.unit}</p>
+      <p className="card-text">Stock: {offer.stock}</p>
+      <p className="card-text">Price per Unit: {offer.price_per_unit}</p>
+      <p className="card-text">Location: <a href={offer.location} target="_blank" rel="noopener noreferrer">{offer.location}</a></p>
+      <p className="card-text">Review: <a href={offer.review} target="_blank" rel="noopener noreferrer">{offer.review}</a></p>
+      <img src={`${offer.pic}`} className="card-img-top" alt="Offer"/>
     </div>
   );
 };

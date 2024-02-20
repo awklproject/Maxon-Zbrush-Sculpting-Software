@@ -8,7 +8,10 @@ class OfferInfo(models.Model):
     price_per_unit =  models.IntegerField()
 
     # google based informations
+    # TODO : there must be some checks to make sure the links are correct
     location = models.URLField()
+    meeting_point = models.URLField()
+    drop_off_point = models.URLField()
     review = models.URLField()
 
     # descriptive image
