@@ -4,7 +4,7 @@ from rest_framework import routers
 from .views import OfferInfoSet
 
 router = routers.DefaultRouter()
-router.register(r'list', OfferInfoSet)
+router.register(r'list', OfferInfoSet, basename='ListModel')
 
 urlpatterns = [
     path('', include(router.urls)),
