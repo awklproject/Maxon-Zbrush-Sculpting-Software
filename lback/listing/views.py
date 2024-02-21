@@ -6,5 +6,5 @@ from django.utils import timezone
 
 class OfferInfoSet(viewsets.ModelViewSet):
     current_time = timezone.now()
-    visible_products = OfferInfo.objects.filter(start_time__lte=current_time, end_time__gte=current_time)
+    queryset = OfferInfo.objects.filter(start_time__lte=current_time, end_time__gte=current_time)
     serializer_class = OfferInfoSerializer
