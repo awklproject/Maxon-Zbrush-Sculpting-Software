@@ -2,12 +2,14 @@ from django.db import models
 
 
 class OfferInfo(models.Model):
+    # supplier model :
     # supplier info
     supplier_name = models.CharField(max_length=100)
-    supplier_location = models.CharField(max_length=100)
     supplier_address = models.CharField(max_length=100)
     supplier_phone = models.CharField(max_length=100)
 
+    # offers model:
+    highlights = models.TextField()
     description = models.TextField()
     additional_info = models.TextField()
     including = models.TextField()
@@ -26,4 +28,5 @@ class OfferInfo(models.Model):
     review = models.URLField()
 
     pic = models.ImageField(upload_to='uploads/')
-
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField()
