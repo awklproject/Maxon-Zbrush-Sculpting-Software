@@ -1,6 +1,7 @@
 fields for the db models / 
 -------------------------
 (preferably from models.Model) 
+
 - name 
 - name of the org
 - domain of the org
