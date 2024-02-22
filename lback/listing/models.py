@@ -3,28 +3,11 @@ from django.db import models
 
 # info that will be showed on the card in the front page
 class OfferInfo(models.Model):
-    # supplier model :
-    # supplier info
-    supplier_name = models.CharField(max_length=100)
-    supplier_address = models.CharField(max_length=100)
-    supplier_phone = models.CharField(max_length=100)
-
-    # offers model:
-    highlights = models.TextField()
-    description = models.TextField()
-    additional_info = models.TextField()
-    including = models.TextField()
-    excluding = models.TextField()
-
-    faq = models.TextField()
+    # outside card 
+    title = models.CharField(max_length=200)
     unit = models.CharField(max_length=120)
-    stock = models.IntegerField()
     price_per_unit = models.IntegerField()
-
-    location = models.URLField()
-    meeting_point = models.URLField()
-    drop_off_point = models.URLField()
-    review = models.URLField()
+    stock = models.IntegerField()
 
     pic = models.ImageField(upload_to='uploads/')
 
@@ -33,6 +16,11 @@ class OfferInfo(models.Model):
 
  
 class OfferDetails(models.Model):
+    # details to which offer
+    offer_info = models.OneToOneField(OfferInfo, 
+                                      on_delete=models.CASCADE,
+                                      primary_key=True)
+    highlights = models.TextField()
     including = models.TextField()
     excluding = models.TextField()
     faq = models.TextField()
@@ -40,15 +28,13 @@ class OfferDetails(models.Model):
     additional_info = models.TextField()
 
 
-# TODO: should this be required ?
 class Google(models.Model):
-    location = model.URLField()
+    location = models.URLField()
     meeting_point = models.URLField()
     drop_off_point = models.URLField()
     review = models.URLField()
 
 
-# supplier name / the supplier model
 class Supplier(models.Model):
     name = models.CharField(max_length=200)
     address = models.CharField(max_length=200)
@@ -56,7 +42,3 @@ class Supplier(models.Model):
     email = models.CharField(max_length=22)
 
 
-# back offer model
-## this is related to the inside of the offer model
-
-# google based informations

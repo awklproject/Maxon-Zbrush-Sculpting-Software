@@ -1,7 +1,13 @@
 fields for the db models / 
 -------------------------
-(preferably from models.Model) 
+TODO:
+-----
+- ( ) fragmentation of models of the database table 
+- ( ) addding what is considered the highlight lately 
+- ( ) creating 2 pages one for display and the other for detailed info about offers
 
+
+(preferably from models.Model) 
 - name 
 - name of the org
 - domain of the org
