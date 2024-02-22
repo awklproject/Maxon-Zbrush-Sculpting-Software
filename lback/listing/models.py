@@ -3,7 +3,7 @@ from django.db import models
 
 # info that will be showed on the card in the front page
 class OfferInfo(models.Model):
-    # outside card 
+    # outside card
     title = models.CharField(max_length=200)
     unit = models.CharField(max_length=120)
     price_per_unit = models.IntegerField()
@@ -14,10 +14,10 @@ class OfferInfo(models.Model):
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
 
- 
+
 class OfferDetails(models.Model):
     # details to which offer
-    offer_info = models.OneToOneField(OfferInfo, 
+    offer_info = models.OneToOneField(OfferInfo,
                                       on_delete=models.CASCADE,
                                       primary_key=True)
     highlights = models.TextField()
