@@ -1,18 +1,39 @@
 from django.db import models
 
 
-# info that will be showed on the card in the front page
+class Supplier(models.Model):
+    name = models.CharField(max_length=200)
+    address = models.CharField(max_length=200)
+    phone = models.CharField(max_length=22)
+    email = models.CharField(max_length=22)
+
+    def __str__(self):
+        return "%s" % (self.name)
+
+
+class ThirdParty(models.Model):
+    location = models.URLField()
+    meeting_point = models.URLField()
+    drop_off_point = models.URLField()
+    review = models.URLField()
+
+
 class OfferInfo(models.Model):
-    # outside card
     title = models.CharField(max_length=200)
     unit = models.CharField(max_length=120)
     price_per_unit = models.IntegerField()
     stock = models.IntegerField()
 
+    header = models.CharField(max_length=350)
     pic = models.ImageField(upload_to='uploads/')
-
+    supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE)
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
+
+    third_party = models.ForeignKey(ThirdParty, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "%s(%s)" % (self.title, self.supplier.name)
 
 
 class OfferDetails(models.Model):
@@ -24,21 +45,8 @@ class OfferDetails(models.Model):
     including = models.TextField()
     excluding = models.TextField()
     faq = models.TextField()
-    description = models.CharField()
+    description = models.TextField()
     additional_info = models.TextField()
 
-
-class Google(models.Model):
-    location = models.URLField()
-    meeting_point = models.URLField()
-    drop_off_point = models.URLField()
-    review = models.URLField()
-
-
-class Supplier(models.Model):
-    name = models.CharField(max_length=200)
-    address = models.CharField(max_length=200)
-    phone = models.CharField(max_length=22)
-    email = models.CharField(max_length=22)
-
-
+    def __str__(self):
+        return "%s" % (self.offer_info.title)
