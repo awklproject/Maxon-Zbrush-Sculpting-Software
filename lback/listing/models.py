@@ -26,10 +26,10 @@ class OfferInfo(models.Model):
 
     header = models.CharField(max_length=350)
     pic = models.ImageField(upload_to='uploads/')
-    supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE)
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
 
+    supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE)
     third_party = models.ForeignKey(ThirdParty, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -37,7 +37,6 @@ class OfferInfo(models.Model):
 
 
 class OfferDetails(models.Model):
-    # details to which offer
     offer_info = models.OneToOneField(OfferInfo,
                                       on_delete=models.CASCADE,
                                       primary_key=True)

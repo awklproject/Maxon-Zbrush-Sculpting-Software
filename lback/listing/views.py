@@ -1,5 +1,5 @@
 from .models import OfferInfo, ThirdParty, OfferDetails, Supplier
-from .serializers import OfferInfoSerializer, TpSerializer, SupplierSerializer, DetailsSerializer
+from .serializers import OfferInfoSerializer, TpSerializer, SupplierSerializer, DetailsSerializer 
 from rest_framework import viewsets
 from django.utils import timezone
 
@@ -9,6 +9,14 @@ class OfferInfoSet(viewsets.ModelViewSet):
     queryset = OfferInfo.objects.filter(start_time__lte=current_time,
                                         end_time__gte=current_time)
     serializer_class = OfferInfoSerializer
+
+
+class OfferDetailsSet(viewsets.ModelViewSet):
+    try:
+        queryset = OfferDetails.objects.filter(offer_info=4)
+    except OfferDetails.DoesNotExist:
+        queryset = None
+    serializer_class = DetailsSerializer
 
 
 # for testing Delete
