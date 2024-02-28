@@ -11,35 +11,25 @@ class Supplier(models.Model):
         return "%s" % (self.name)
 
 
-class ThirdParty(models.Model):
-    location = models.URLField()
-    meeting_point = models.URLField()
-    drop_off_point = models.URLField()
-    review = models.URLField()
+class Pic(models.Model):
+    description = models.CharField(max_length=200)
+    pic = models.ImageField(upload_to='uploads/')
 
 
-class OfferInfo(models.Model):
+class Offer(models.Model):
     title = models.CharField(max_length=200)
+    pic = models.ForeignKey(Pic, on_delete=models.RESTRICT)
+
     unit = models.CharField(max_length=120)
-    price_per_unit = models.IntegerField()
-    stock = models.IntegerField()
+
+    price_per_unit = models.FloatField()
+    stock = models.PositiveIntegerField()
 
     header = models.CharField(max_length=350)
-    pic = models.ImageField(upload_to='uploads/')
+
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
 
-    supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE)
-    third_party = models.ForeignKey(ThirdParty, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return "%s(%s)" % (self.title, self.supplier.name)
-
-
-class OfferDetails(models.Model):
-    offer_info = models.OneToOneField(OfferInfo,
-                                      on_delete=models.CASCADE,
-                                      primary_key=True)
     highlights = models.TextField()
     including = models.TextField()
     excluding = models.TextField()
@@ -47,5 +37,13 @@ class OfferDetails(models.Model):
     description = models.TextField()
     additional_info = models.TextField()
 
+    supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE)
+
+    # returned third party items
+    location = models.URLField()
+    meeting_point = models.URLField()
+    drop_off_point = models.URLField()
+    review = models.URLField()
+
     def __str__(self):
-        return "%s" % (self.offer_info.title)
+        return "%s(%s)" % (self.title.short, self.supplier.name)

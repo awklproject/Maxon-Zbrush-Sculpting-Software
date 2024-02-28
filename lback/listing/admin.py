@@ -1,7 +1,6 @@
 from django.contrib import admin
-from .models import OfferInfo, OfferDetails, ThirdParty, Supplier
+from .models import Offer,  Supplier, Pic
 
-admin.site.register(OfferInfo)
-admin.site.register(OfferDetails)
-admin.site.register(ThirdParty)
+admin.site.register(Offer)
+admin.site.register(Pic)
 admin.site.register(Supplier)
