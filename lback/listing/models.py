@@ -18,7 +18,11 @@ class Pic(models.Model):
 
 class Offer(models.Model):
     title = models.CharField(max_length=200)
-    pic = models.ForeignKey(Pic, on_delete=models.RESTRICT)
+    main_pic = models.ImageField(upload_to='uploads/')
+
+    # TODO: make it multiple images for the same offer
+    # probably save by reference
+    pic = models.ForeignKey(Pic, on_delete=models.RESTRICT, )
 
     unit = models.CharField(max_length=120)
 
@@ -40,10 +44,10 @@ class Offer(models.Model):
     supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE)
 
     # returned third party items
-    location = models.URLField()
-    meeting_point = models.URLField()
-    drop_off_point = models.URLField()
+    location = models.CharField(max_length=600)
+    meeting_point = models.CharField(max_length=600)
+    drop_off_point = models.CharField(max_length=600)
     review = models.URLField()
 
     def __str__(self):
-        return "%s(%s)" % (self.title.short, self.supplier.name)
+        return "%s(%s)" % (self.title, self.supplier.name)
