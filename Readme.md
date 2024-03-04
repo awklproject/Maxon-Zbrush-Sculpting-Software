@@ -6,9 +6,15 @@ TODO:
 - (x) addding what is considered the highlight lately 
 - (x) creating 2 pages one for display and the other for detailed info about offers
 
-- () create the end page -- without calendar
-- () create the calendar page/ component
-- () create the booking database
+- (x) create the end page -- without calendar
+- (x) create the calendar page/ component
+
+- *()* add credit system functionality
+- *()* add qr code functionality
+- *()* add compatible calendar backend  
+- *()* add rating
+- *()* add user review functionality
+- *()* create the booking database
 
 some tips
 ---------
