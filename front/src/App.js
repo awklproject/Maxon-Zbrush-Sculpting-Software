@@ -1,5 +1,6 @@
 import React from 'react';
 import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState,useEffect } from 'react';
 import OffersList from './OffersList';
@@ -12,7 +13,10 @@ const App = () => {
 
     // for testing TODO delete values
     const startDate = new Date (2017, 0, 1);
-
+    const onClickDayDo= (value, event) => {
+        alert(`new date ${value}`)
+        console.log(value.toJSON());
+    }
     const mainSite = "http://localhost:8000";
     const getOffersLink = `${mainSite}/list/`; 
     useEffect(() => {
@@ -38,6 +42,7 @@ const App = () => {
                     defaultActiveStartDate={startDate}
                     value={value}
                     onChange={onChange} 
+                    onClickDay= {onClickDayDo}
                  />}/>
 
                 <Route path="/details/" 
