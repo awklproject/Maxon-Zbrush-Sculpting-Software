@@ -2,31 +2,24 @@ fields for the db models /
 -------------------------
 TODO:
 -----
-- ( ) fragmentation of models of the database table 
-- ( ) addding what is considered the highlight lately 
-- ( ) creating 2 pages one for display and the other for detailed info about offers
+- (x) fragmentation of models of the database table 
+- (x) addding what is considered the highlight lately 
+- (x) creating 2 pages one for display and the other for detailed info about offers
 
+- () create the end page -- without calendar
+- () create the calendar page/ component
+- () create the booking database
 
-(preferably from models.Model) 
-- name 
-- name of the org
-- domain of the org
-- contact info 
+some tips
+---------
 
-- pictures 
-- highlights 
-- description
-- whats included / excluded
-- FAQ!
-- cancellation
-- supplier name / location / address / phone
-- review
-- additional information
-- meeting point / drop off point
-- language
-- min Max
-- duration
-- availability calendar time
-- recommendation 
-- meals
-- transportation type 
+- orders must show up always even when not available , availability 
+    is a calendar thing
+-  some info may be set up in real time by the supplier like 
+    the meeting point / location and such things
+- it's not a single start / end time . it has to be a calendar of 
+    time
+
+topics
+------
+- what about the Date interface and what is the maximum edits we can do to it 

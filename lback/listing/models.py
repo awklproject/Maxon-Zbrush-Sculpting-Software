@@ -1,6 +1,7 @@
 from django.db import models
 
 
+# what are the accessibility of the supplier / add it to the auth system
 class Supplier(models.Model):
     name = models.CharField(max_length=200)
     address = models.CharField(max_length=200)
@@ -16,6 +17,8 @@ class Pic(models.Model):
     pic = models.ImageField(upload_to='uploads/')
 
 
+# area - location must be predefined set
+# category must be predefined set
 class Offer(models.Model):
     title = models.CharField(max_length=200)
     main_pic = models.ImageField(upload_to='uploads/')

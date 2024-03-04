@@ -1,4 +1,5 @@
 import React from 'react';
+import Calendar from 'react-calendar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState,useEffect } from 'react';
 import OffersList from './OffersList';
@@ -7,6 +8,10 @@ import Details from './Details';
 const App = () => {
     const [offers, setOffers] = useState([]);
     const [selectedOffer, setSelectedOffer] = useState({});
+    const [value, onChange] = useState(new Date());
+
+    // for testing TODO delete values
+    const startDate = new Date (2017, 0, 1);
 
     const mainSite = "http://localhost:8000";
     const getOffersLink = `${mainSite}/list/`; 
@@ -22,13 +27,18 @@ const App = () => {
         };
         fetchOffers();
       }, []);
+    //         element={<OffersList offers={offers} 
+      //        setSelectedOffer={setSelectedOffer}
+       //       selectedOffer={selectedOffer} />} 
   return (
       <BrowserRouter>
           <Routes>
               <Route path="/" 
-              element={<OffersList offers={offers} 
-              setSelectedOffer={setSelectedOffer}
-              selectedOffer={selectedOffer} />} />
+                element={<Calendar 
+                    defaultActiveStartDate={startDate}
+                    value={value}
+                    onChange={onChange} 
+                 />}/>
 
                 <Route path="/details/" 
                     element={<Details selectedOffer={selectedOffer} />} 
