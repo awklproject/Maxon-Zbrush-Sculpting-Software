@@ -10,15 +10,22 @@ const App = () => {
     const [offers, setOffers] = useState([]);
     const [selectedOffer, setSelectedOffer] = useState({});
     const [value, onChange] = useState(new Date());
-
+    //
     // for testing TODO delete values
-    const startDate = new Date (2017, 0, 1);
+    
+    const startDate = new Date (2024, 0, 1);
     const onClickDayDo= (value, event) => {
         alert(`new date ${value}`)
         console.log(value.toJSON());
     }
+    const tileDisabled = ({ activeStartDate, date, view }) => date.getDay() === 0
+
+    // end testing data
+    //
+    
     const mainSite = "http://localhost:8000";
     const getOffersLink = `${mainSite}/list/`; 
+
     useEffect(() => {
         const fetchOffers = async () => {
           try {
@@ -42,7 +49,9 @@ const App = () => {
                     defaultActiveStartDate={startDate}
                     value={value}
                     onChange={onChange} 
+                    selectRange={true}
                     onClickDay= {onClickDayDo}
+                    tileDisabled={tileDisabled}
                  />}/>
 
                 <Route path="/details/" 
