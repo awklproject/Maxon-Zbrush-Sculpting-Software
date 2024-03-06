@@ -1,7 +1,7 @@
 TODO:
 -----
 
-- () creation of booking system
+- (x) creation of booking system
 - () creation of availability API that fits the calendar 
 - () 
 - () 
