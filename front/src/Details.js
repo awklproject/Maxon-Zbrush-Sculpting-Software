@@ -1,5 +1,11 @@
 import { Container, Typography, Card, CardActions, CardContent, CardMedia, Grid, Button } from '@mui/material';
 
+const handleButtonClick = ()=>{
+    
+};
+
+const mainSite = "http://localhost:8000";
+
 const Details = ({selectedOffer}) => {
   return (
     <Container maxWidth="lg">
@@ -12,7 +18,7 @@ const Details = ({selectedOffer}) => {
             <CardMedia
               component="img"
               height="auto"
-              image={selectedOffer.main_pic}
+              image={`${mainSite}${selectedOffer.main_pic}`}
               alt={selectedOffer.title}
             />
           </Card>
@@ -36,7 +42,7 @@ const Details = ({selectedOffer}) => {
               {/* Render other details here */}
             </CardContent>
       <CardActions>
-        <Button size="small">
+        <Button size="small" onClick={handleButtonClick}>
           Book Now
         </Button>
 

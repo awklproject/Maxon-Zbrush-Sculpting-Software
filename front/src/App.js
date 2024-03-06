@@ -3,13 +3,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState,useEffect } from 'react';
 import OffersList from './OffersList';
 import Details from './Details';
+import BookingForm from './BookingForm';
 
 const App = () => {
     const [offers, setOffers] = useState([]);
     const [selectedOffer, setSelectedOffer] = useState({});
 
     const mainSite = "http://localhost:8000";
-    const getOffersLink = `${mainSite}/list/`; 
+    const getOffersLink = `${mainSite}/api/list/`; 
     useEffect(() => {
         const fetchOffers = async () => {
           try {
@@ -33,6 +34,13 @@ const App = () => {
                 <Route path="/details/" 
                     element={<Details selectedOffer={selectedOffer} />} 
               />
+
+              <Route path="/booknow/" 
+              element={<BookingForm />} 
+              />
+
+
+
 
                         </Routes>
       </BrowserRouter>

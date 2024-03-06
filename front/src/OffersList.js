@@ -3,6 +3,9 @@ import { Card, CardContent, Typography, Button, CardActions, CardMedia, selectCl
 import "./OffersList.css";
 import { Link } from 'react-router-dom';
 
+
+const mainSite = "http://localhost:8000";
+
 const OffersList = ({offers, setSelectedOffer, selectedOffer}) => {
     const handleOfferClick = (offer) => {
         setSelectedOffer(offer);
@@ -23,7 +26,7 @@ const OfferCard = ({ offer, handleOfferClick }) => {
       <CardMedia
         component="img"
         height="140"
-        image={offer.main_pic}
+        image={`${mainSite}${offer.main_pic}`}
         alt="Offer Image"
       />
       <CardContent className="content-card">
