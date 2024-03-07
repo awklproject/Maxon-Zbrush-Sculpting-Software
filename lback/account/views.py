@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -23,9 +23,17 @@ def login_user(request):
 
 
 @api_view(['POST'])
+def logout_user(request):
+    logout(request)
+    return Response({'message': 'Logout Successful'},
+                    status=status.HTTP_200_OK)
+
+
+@api_view(['POST'])
 def register_user(request):
     serializer = UserSerializer(data=request.data)
     if serializer.is_valid():
         user = serializer.save()
-        return Response({'username': user.username, 'email': user.email}, status=status.HTTP_201_CREATED)
+        return Response({'username': user.username, 'email': user.email},
+                        status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

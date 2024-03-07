@@ -12,5 +12,3 @@ TODO:
 
 - () creation of availability API that fits the calendar 
 - () 
-- () 
-- () 
