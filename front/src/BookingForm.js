@@ -24,12 +24,15 @@ const handleBookClick = async () => {
         "user_mobile": mobile,
     };
     try {
-    const csrftonken = getCookie('csrftoken')
+    const csrftoken = getCookie('csrftoken')
+    
+    console.log(csrftoken);
+    console.log(formData); 
     const response = await fetch('http://localhost:8000/api/booking', {
         method: 'POST',
         body: formData,
         headers: {
-            'X-CSRFToken': csrftonken
+            'X-CSRFToken': csrftoken
         },
     
     });
