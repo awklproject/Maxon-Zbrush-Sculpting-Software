@@ -37,6 +37,7 @@ frontend
 - (x) when you click booknow it get u to the end of the page to enter info
 - (x) put the tabs inside an appbar 
 - (x) main page tabs : light current page and link to the other pages
+- (x) add login/signup link in the main tabs
 - ( ) create user login page and connect it to the api
 - ( ) design the details page
 - ( ) add rows of offers . depending on subcategories/ some filters ? 

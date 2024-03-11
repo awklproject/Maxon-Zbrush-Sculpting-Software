@@ -18,7 +18,6 @@ const OffersList = ({offers, setSelectedOffer, selectedOffer}) => {
     const handleOfferClick = (offer) => {
         setSelectedOffer(offer);
     }
-
     return (
     <div>
         <AppBar  position="static" color="grey">
@@ -26,6 +25,7 @@ const OffersList = ({offers, setSelectedOffer, selectedOffer}) => {
       <Tab label="Main" value="/inbox/:id" to="/" component={Link} />
       <Tab label="My Bookings" value="/drafts" to="/" component={Link} />
       <Tab label="My Accounts" value="/trash" to="/" component={Link} />
+      <Tab label="Login/Signup" style={{ marginLeft: 'auto' }} />      
     </Tabs>
         </AppBar>
         <br/>
