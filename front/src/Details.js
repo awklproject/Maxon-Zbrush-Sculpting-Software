@@ -3,17 +3,15 @@
 import { Container, Typography, Card, CardActions, CardContent, CardMedia, Grid, Button} from '@mui/material';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import { useState } from 'react';
+import { useState, useRef} from 'react';
 import BookingForm from './BookingForm';
-
-const handleButtonClick = (selectedOffer)=>{
-   console.log("booking adder of ") 
-    console.log(selectedOffer.id)
-};
 
 const mainSite = "http://localhost:8000";
 
 const Details = ({selectedOffer}) => {
+    const inpRef = useRef(null);
+
+    const handleButtonClick = ()=> inpRef.current?.scrollIntoView({behaviour: 'smooth'})
     const [value, onChange] = useState(new Date());
     //
     // for testing TODO delete values
@@ -135,7 +133,7 @@ const Details = ({selectedOffer}) => {
       </Typography>
       {/* Render other sections like FAQs, Reviews, etc. */}
     </Container>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} ref={inpRef}>
             <Calendar 
                     defaultActiveStartDate={startDate}
                     value={value}
