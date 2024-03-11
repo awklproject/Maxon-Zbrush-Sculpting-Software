@@ -1,7 +1,8 @@
-import { Container, Typography, Card, CardActions, CardContent, CardMedia, Grid, Button } from '@mui/material';
+import { Container, Typography, Card, CardActions, CardContent, CardMedia, Grid, Button} from '@mui/material';
 
-const handleButtonClick = ()=>{
-    
+const handleButtonClick = (selectedOffer)=>{
+   console.log("booking adder of ") 
+    console.log(selectedOffer.id)
 };
 
 const mainSite = "http://localhost:8000";
@@ -42,7 +43,7 @@ const Details = ({selectedOffer}) => {
               {/* Render other details here */}
             </CardContent>
       <CardActions>
-        <Button size="small" onClick={handleButtonClick}>
+          <Button size="small" onClick={()=>handleButtonClick(selectedOffer)}>
           Book Now
         </Button>
 

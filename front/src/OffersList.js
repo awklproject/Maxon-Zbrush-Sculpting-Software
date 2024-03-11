@@ -52,7 +52,7 @@ const OfferCard = ({ offer, handleOfferClick }) => {
       </CardContent>
       <CardActions>
         <Link 
-            to="/details"
+            to={`/details/${offer.id}/`}
             onClick={()=>handleOfferClick(offer)}
         >
         <Button  

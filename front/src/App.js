@@ -31,7 +31,7 @@ const App = () => {
               setSelectedOffer={setSelectedOffer}
               selectedOffer={selectedOffer} />} />
 
-                <Route path="/details/" 
+                <Route path={`/details/${selectedOffer.id}/`} 
                     element={<Details selectedOffer={selectedOffer} />} 
               />
 

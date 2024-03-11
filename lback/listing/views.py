@@ -15,7 +15,8 @@ def getOfferByID(request, offer_id):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     except offer.DoesNotExist:
-        return Response({'error': 'offer not found'}, status=status.HTTP_404_NOT_FOUND)
+        return Response({'error': 'offer not found'},
+                        status=status.HTTP_404_NOT_FOUND)
 
 
 class OfferSet(viewsets.ModelViewSet):
