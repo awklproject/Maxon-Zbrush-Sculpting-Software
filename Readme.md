@@ -7,11 +7,11 @@ backend
 - (x) -2- achieve end to end booking without authentication
 - (x) add user authentication 
 - (x) add logout
-- ( ) add edit account / delete account apis 
 - (x) -3- create a group for suppliers
+- (x) register supplier 
+- ( ) add edit account / delete account apis 
 - ( ) add getofferbyid/ API (accessed at /details/ss call)
 - ( ) define api access for users/admin/suppliers
-- (x) register supplier 
 - ( ) login as supplier
 - ( ) creation of availability API that fits the calendar 
 - ( ) implement permission classes
@@ -32,7 +32,8 @@ frontend
 - (x) make booking form and details on the same page
 - (x) note to remove the routing  if done
 - (x) add nav bar
-- ( ) make calendar and booking form at the end of the page and when you click booknow it get u there
+- (x) make calendar and booking form at the end of the page
+- ( ) when you click booknow it get u to the end of the page to enter info
 - ( ) design the details page
 - ( ) add rows of offers . depending on subcategories/ some filters ? 
 - ( ) 

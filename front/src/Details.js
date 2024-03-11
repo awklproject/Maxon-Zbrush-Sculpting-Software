@@ -27,6 +27,7 @@ const Details = ({selectedOffer}) => {
 
     // end testing data
     return (
+        <div>
     <Container maxWidth="lg">
       <Typography variant="h2" align="center" gutterBottom>
         {selectedOffer.title}
@@ -69,17 +70,7 @@ const Details = ({selectedOffer}) => {
 
           </Card>
         </Grid>
-        <Grid item xs={12} md={6}>
-            <Calendar 
-                    defaultActiveStartDate={startDate}
-                    value={value}
-                    onChange={onChange} 
-                    selectRange={true}
-                    onClickDay= {onClickDayDo}
-                    tileDisabled={tileDisabled}
-                 />
-            <BookingForm />
-        </Grid>
+
       </Grid>
       {/* Additional information section */}
         <br />
@@ -144,6 +135,18 @@ const Details = ({selectedOffer}) => {
       </Typography>
       {/* Render other sections like FAQs, Reviews, etc. */}
     </Container>
+        <Grid item xs={12} md={6}>
+            <Calendar 
+                    defaultActiveStartDate={startDate}
+                    value={value}
+                    onChange={onChange} 
+                    selectRange={true}
+                    onClickDay= {onClickDayDo}
+                    tileDisabled={tileDisabled}
+                 />
+            <BookingForm />
+        </Grid>
+        </div>
   );
 };
 
