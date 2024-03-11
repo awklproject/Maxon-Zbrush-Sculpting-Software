@@ -25,7 +25,7 @@ const OffersList = ({offers, setSelectedOffer, selectedOffer}) => {
       <Tab label="Main" value="/" to="/" component={Link} />
       <Tab label="My Bookings" value="/drafts" to="/" component={Link} />
       <Tab label="My Accounts" value="/trash" to="/" component={Link} />
-      <Tab label="Login/Signup" style={{ marginLeft: 'auto' }} />      
+      <Tab label="Login/Signup" value="/login" to="/login/" component={Link} style={{ marginLeft: 'auto' }} />      
     </Tabs>
         </AppBar>
         <br/>

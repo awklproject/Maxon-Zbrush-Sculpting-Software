@@ -40,6 +40,7 @@ frontend
 - (x) main page tabs : light current page and link to the other pages
 - (x) add login/signup link in the main tabs
 - (x) create user login page 
+- (x) app bar login tab connect to login component
 - ( ) connect user login to the api
 - ( ) add signup key
 - ( ) create signup form
