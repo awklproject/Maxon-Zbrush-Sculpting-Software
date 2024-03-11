@@ -21,6 +21,7 @@ backend
 - ( ) create api endpoint to credit management
 - ( ) note that the credits are connected with the booking, rating and reviews
 - ( ) filter bookings by user / api to display bookings and it's status
+- ( ) token authentication
 - ( ) 
 
 -------------------------------
@@ -38,7 +39,11 @@ frontend
 - (x) put the tabs inside an appbar 
 - (x) main page tabs : light current page and link to the other pages
 - (x) add login/signup link in the main tabs
-- ( ) create user login page and connect it to the api
+- (x) create user login page 
+- ( ) connect user login to the api
+- ( ) add signup key
+- ( ) create signup form
+- ( ) connect signup form to the register api
 - ( ) design the details page
 - ( ) add rows of offers . depending on subcategories/ some filters ? 
 - ( ) 

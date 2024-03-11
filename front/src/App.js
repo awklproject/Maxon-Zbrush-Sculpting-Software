@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState,useEffect } from 'react';
 import OffersList from './OffersList';
 import Details from './Details';
+import Login from './UserLogin';
 
 const App = () => {
     const [offers, setOffers] = useState([]);
@@ -33,6 +34,8 @@ const App = () => {
                 <Route path={`/details/${selectedOffer.id}/`} 
                     element={<Details selectedOffer={selectedOffer} />} 
               />
+
+              <Route path="/login/" element={<Login />} />
 
                          </Routes>
       </BrowserRouter>

@@ -22,7 +22,7 @@ const OffersList = ({offers, setSelectedOffer, selectedOffer}) => {
     <div>
         <AppBar  position="static" color="grey">
     <Tabs value={tabValue} onChange={handleTabChange} centered>
-      <Tab label="Main" value="/inbox/:id" to="/" component={Link} />
+      <Tab label="Main" value="/" to="/" component={Link} />
       <Tab label="My Bookings" value="/drafts" to="/" component={Link} />
       <Tab label="My Accounts" value="/trash" to="/" component={Link} />
       <Tab label="Login/Signup" style={{ marginLeft: 'auto' }} />      
