@@ -30,6 +30,7 @@ frontend
 - (x) make static path and linking for the system to store the bookings/offers
 - (x) add calendar to details page
 - ( ) make booking form and details on the same page
+- ( ) note to remove the routing and the getofferbyid in back todos if done
 - ( ) add nav bar with categories on the main page(rows vs tabs ?)
 - ( ) when you click "book now" the book component should open to the booking component ?
 - ( ) 

@@ -2,6 +2,7 @@ import { Container, Typography, Card, CardActions, CardContent, CardMedia, Grid,
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { useState } from 'react';
+import BookingForm from './BookingForm';
 
 const handleButtonClick = (selectedOffer)=>{
    console.log("booking adder of ") 
@@ -75,6 +76,7 @@ const Details = ({selectedOffer}) => {
                     onClickDay= {onClickDayDo}
                     tileDisabled={tileDisabled}
                  />
+            <BookingForm />
         </Grid>
       </Grid>
       {/* Additional information section */}
