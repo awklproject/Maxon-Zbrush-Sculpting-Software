@@ -32,9 +32,9 @@ frontend
 - (x) make booking form and details on the same page
 - (x) note to remove the routing  if done
 - (x) add nav bar
+- ( ) make calendar and booking form at the end of the page and when you click booknow it get u there
 - ( ) design the details page
 - ( ) add rows of offers . depending on subcategories/ some filters ? 
-- ( ) when you click "book now" the book component should open to the booking component ?
 - ( ) 
 
 -------------------------------
