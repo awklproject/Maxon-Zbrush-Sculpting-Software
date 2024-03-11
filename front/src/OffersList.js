@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, CardContent, Typography, Button, CardActions, CardMedia, selectClasses } from '@mui/material';
+import { Card, CardContent, Typography, Button, CardActions, CardMedia, AppBar } from '@mui/material';
 import "./OffersList.css";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -9,17 +9,26 @@ import { Link } from 'react-router-dom';
 const mainSite = "http://localhost:8000";
 
 const OffersList = ({offers, setSelectedOffer, selectedOffer}) => {
+    
+  const [tabValue, setTabValue] = useState(0);
+
+  const handleTabChange = (event, newValue) => {
+    setTabValue(newValue);
+  }
     const handleOfferClick = (offer) => {
         setSelectedOffer(offer);
     }
 
     return (
     <div>
-    <Tabs value={"Tab"} centered>
+        <AppBar  position="static" color="grey">
+    <Tabs value={tabValue} onChange={handleTabChange} centered>
       <Tab label="Main" value="/inbox/:id" to="/" component={Link} />
       <Tab label="My Bookings" value="/drafts" to="/" component={Link} />
-      <Tab label="My Page" value="/trash" to="/" component={Link} />
+      <Tab label="My Accounts" value="/trash" to="/" component={Link} />
     </Tabs>
+        </AppBar>
+        <br/>
     <div className="offers-list">
         <br/>
       {offers.map((offer) => (

@@ -20,6 +20,7 @@ backend
 - ( ) adding credit field to the user model
 - ( ) create api endpoint to credit management
 - ( ) note that the credits are connected with the booking, rating and reviews
+- ( ) filter bookings by user / api to display bookings and it's status
 - ( ) 
 
 -------------------------------
@@ -34,7 +35,8 @@ frontend
 - (x) add nav bar
 - (x) make calendar and booking form at the end of the page
 - (x) when you click booknow it get u to the end of the page to enter info
-- ( ) main page tabs : light current page and link to the other pages
+- (x) put the tabs inside an appbar 
+- (x) main page tabs : light current page and link to the other pages
 - ( ) create user login page and connect it to the api
 - ( ) design the details page
 - ( ) add rows of offers . depending on subcategories/ some filters ? 
