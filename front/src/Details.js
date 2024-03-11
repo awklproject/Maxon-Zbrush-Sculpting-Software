@@ -1,4 +1,7 @@
 import { Container, Typography, Card, CardActions, CardContent, CardMedia, Grid, Button} from '@mui/material';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import { useState } from 'react';
 
 const handleButtonClick = (selectedOffer)=>{
    console.log("booking adder of ") 
@@ -8,7 +11,19 @@ const handleButtonClick = (selectedOffer)=>{
 const mainSite = "http://localhost:8000";
 
 const Details = ({selectedOffer}) => {
-  return (
+    const [value, onChange] = useState(new Date());
+    //
+    // for testing TODO delete values
+    
+    const startDate = new Date (2024, 0, 1);
+    const onClickDayDo= (value, event) => {
+        alert(`new date ${value}`)
+        console.log(value.toJSON());
+    }
+    const tileDisabled = ({ activeStartDate, date, view }) => date.getDay() === 0
+
+    // end testing data
+    return (
     <Container maxWidth="lg">
       <Typography variant="h2" align="center" gutterBottom>
         {selectedOffer.title}
@@ -50,6 +65,16 @@ const Details = ({selectedOffer}) => {
       </CardActions>
 
           </Card>
+        </Grid>
+        <Grid item xs={12} md={6}>
+            <Calendar 
+                    defaultActiveStartDate={startDate}
+                    value={value}
+                    onChange={onChange} 
+                    selectRange={true}
+                    onClickDay= {onClickDayDo}
+                    tileDisabled={tileDisabled}
+                 />
         </Grid>
       </Grid>
       {/* Additional information section */}
