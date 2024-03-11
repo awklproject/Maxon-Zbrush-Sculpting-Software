@@ -1,3 +1,5 @@
+//TODO getOFferByID to fill this page instead of adding items from the loop because if we get to the
+// page without getting redirected from the main page it will not open
 import { Container, Typography, Card, CardActions, CardContent, CardMedia, Grid, Button} from '@mui/material';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';

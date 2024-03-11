@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, Typography, Button, CardActions, CardMedia, selectClasses } from '@mui/material';
 import "./OffersList.css";
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
 import { Link } from 'react-router-dom';
 
 
@@ -12,10 +14,18 @@ const OffersList = ({offers, setSelectedOffer, selectedOffer}) => {
     }
 
     return (
+    <div>
+    <Tabs value={"Tab"} centered>
+      <Tab label="Main" value="/inbox/:id" to="/" component={Link} />
+      <Tab label="My Bookings" value="/drafts" to="/" component={Link} />
+      <Tab label="My Page" value="/trash" to="/" component={Link} />
+    </Tabs>
     <div className="offers-list">
+        <br/>
       {offers.map((offer) => (
         <OfferCard key={offer.id} offer={offer} handleOfferClick={handleOfferClick}/>
       ))}
+    </div>
     </div>
     );
 };

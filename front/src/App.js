@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState,useEffect } from 'react';
 import OffersList from './OffersList';
 import Details from './Details';
-import BookingForm from './BookingForm';
 
 const App = () => {
     const [offers, setOffers] = useState([]);
@@ -35,14 +34,7 @@ const App = () => {
                     element={<Details selectedOffer={selectedOffer} />} 
               />
 
-              <Route path="/booknow/" 
-              element={<BookingForm />} 
-              />
-
-
-
-
-                        </Routes>
+                         </Routes>
       </BrowserRouter>
   )};
 
