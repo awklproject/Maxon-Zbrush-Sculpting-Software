@@ -9,7 +9,7 @@ backend
 - (x) add logout
 - (x) -3- create a group for suppliers
 - (x) register supplier 
-- ( ) add edit account / delete account apis 
+- (x) add edit account / delete account apis 
 - ( ) add getofferbyid/ API (accessed at /details/ss call)
 - ( ) define api access for users/admin/suppliers
 - ( ) login as supplier
@@ -54,4 +54,3 @@ frontend
 2-- directly connected to creating the auth system
 3-- here Supplier model is not related to the user model 
     maybe it should be so we can take advantage of the models'
-    auth system and security systems...
