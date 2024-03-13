@@ -36,11 +36,12 @@ def getBooking(request):
 
 
 @api_view(['GET'])
-def getOfferByID(request, offer_id):
+def get_offer_by_id(request, offer_id):
     try:
         offer = Offer.objects.get(pk=offer_id)
-        serializer = OfferSerializer
-        return Response(serializer.data, status=status.HTTP_200_OK)
-    except offer.DoesNotExist:
-        return Response({'error': 'offer not found'},
+    except Offer.DoesNotExist:
+        return Response({'error': 'Offer not found'},
                         status=status.HTTP_404_NOT_FOUND)
+
+    serializer = OfferSerializer(offer)
+    return Response(serializer.data)

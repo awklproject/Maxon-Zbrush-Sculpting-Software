@@ -10,7 +10,7 @@ backend
 - (x) -3- create a group for suppliers
 - (x) register supplier 
 - (x) add edit account / delete account apis 
-- ( ) add getofferbyid/ API (accessed at /details/ss call)
+- (x) add getofferbyid/ API (accessed at /details/ss call)
 - ( ) define api access for users/admin/suppliers
 - ( ) login as supplier
 - ( ) creation of availability API that fits the calendar 
