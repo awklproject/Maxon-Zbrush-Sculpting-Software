@@ -7,12 +7,26 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
+  const getCookie = (name) => {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`)
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
+
+
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://your-api-url/login/', {
+        const csrftoken = getCookie('csrftoken');
+        console.log(csrftoken);
+        const response = await axios.post('http://localhost:8000/api/token/', {
         username,
         password
-      });
+        }, {
+            headers: {
+                'X-CSRFToken': csrftoken,
+            }
+        });
+        console.log(response);
       const token = response.data.token;
       // Store the token in localStorage or sessionStorage for subsequent requests
       localStorage.setItem('token', token);

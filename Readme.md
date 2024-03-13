@@ -44,10 +44,15 @@ frontend
 - (x) add login/signup link in the main tabs
 - (x) create user login page 
 - (x) app bar login tab connect to login component
+- (x) ensure connection related to the jwt token that is returned on /api/token
+- ( ) ensure session management
+- ( ) ensure booking pending
 - ( ) connect user login to the api
 - ( ) add signup key
 - ( ) create signup form
 - ( ) connect signup form to the register api
+- ( ) create edit account page 
+- ( ) create the delete account page
 - ( ) design the details page
 - ( ) add rows of offers . depending on subcategories/ some filters ? 
 - ( ) 
