@@ -5,6 +5,11 @@ import OffersList from './OffersList';
 import Details from './Details';
 import Login from './UserLogin';
 
+function checkAuthToken(authTokenName) {
+    const authToken = localStorage.getItem(authTokenName);
+    return authToken ? true : false;
+}
+
 const App = () => {
     const [offers, setOffers] = useState([]);
     const [selectedOffer, setSelectedOffer] = useState({});
@@ -12,6 +17,13 @@ const App = () => {
     const mainSite = "http://localhost:8000";
     const getOffersLink = `${mainSite}/api/list/`; 
     useEffect(() => {
+
+if (checkAuthToken("token")) {
+    console.log('User is authenticated');
+} else {
+    console.log('User is not authenticated');
+}
+
         const fetchOffers = async () => {
           try {
             const response = await fetch(getOffersLink);

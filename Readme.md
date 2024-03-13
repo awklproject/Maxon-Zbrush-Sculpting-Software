@@ -11,6 +11,7 @@ backend
 - (x) add edit account / delete account apis 
 - (x) add getofferbyid/ API (accessed at /details/ss call)
 - (x) create token authentication system with jwt
+- ( ) create an api that takes the token to return the user page and the type of the user.
 - ( ) ensure correct functionality of jwt connection with the front end
 - ( ) define api access for users/admin/
 - ( ) implement permission classes
@@ -46,6 +47,8 @@ frontend
 - (x) app bar login tab connect to login component
 - (x) ensure connection related to the jwt token that is returned on /api/token
 - (x) fix token bug to be stored at local storage
+- ( ) check token on page load
+- ( ) if user is authenticated do the view
 - ( ) ensure session management
 - ( ) ensure booking pending
 - ( ) connect user login to the api
