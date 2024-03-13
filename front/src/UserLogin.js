@@ -27,10 +27,11 @@ const Login = () => {
             }
         });
         console.log(response);
-      const token = response.data.token;
+      const token = response.data.access;
       // Store the token in localStorage or sessionStorage for subsequent requests
       localStorage.setItem('token', token);
       // Redirect to another page or perform additional actions after successful login
+      console.log(localStorage.getItem('token'))
     } catch (error) {
       setError('Invalid username or password');
     }

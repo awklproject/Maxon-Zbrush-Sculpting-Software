@@ -45,6 +45,7 @@ frontend
 - (x) create user login page 
 - (x) app bar login tab connect to login component
 - (x) ensure connection related to the jwt token that is returned on /api/token
+- (x) fix token bug to be stored at local storage
 - ( ) ensure session management
 - ( ) ensure booking pending
 - ( ) connect user login to the api
