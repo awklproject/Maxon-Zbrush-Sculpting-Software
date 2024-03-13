@@ -5,8 +5,9 @@ from rest_framework.response import Response
 from django.contrib.auth.models import User
 from .serializers import UserSerializer
 
-#TODO : add permission classes , mostly is authenticated on those, just add the possibility 
-# of bein a supplier
+
+# TODO : add permission classes , mostly is authenticated on those, just add
+# the possibility of bein a supplier
 
 @api_view(['POST'])
 def login_user(request):

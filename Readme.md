@@ -7,15 +7,18 @@ backend
 - (x) -2- achieve end to end booking without authentication
 - (x) add user authentication 
 - (x) add logout
-- (x) -3- create a group for suppliers
 - (x) register supplier 
 - (x) add edit account / delete account apis 
 - (x) add getofferbyid/ API (accessed at /details/ss call)
-- ( ) define api access for users/admin/suppliers
+- (x) create token authentication system with jwt
+- ( ) ensure correct functionality of jwt connection with the front end
+- ( ) define api access for users/admin/
+- ( ) implement permission classes
+- ( ) -3- create a group for suppliers
+- ( ) create api access for suppliers
+- ( ) apply permission classes to api views
 - ( ) login as supplier
 - ( ) creation of availability API that fits the calendar 
-- ( ) implement permission classes
-- ( ) apply permission classes to api views
 - ( ) assingn permissions to supplier
 - ( ) adding credit field to the user model
 - ( ) create api endpoint to credit management
