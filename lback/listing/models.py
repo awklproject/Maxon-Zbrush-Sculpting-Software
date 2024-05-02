@@ -1,5 +1,5 @@
+from django.contrib.auth.models import User, AbstractUser
 from django.db import models
-
 
 BOOKING_PERIOD = (
     ("5", "5M"),
@@ -36,11 +36,13 @@ BOOKING_PERIOD = (
 )
 
 
+# possible : picture and background , website, business license ,
 class Supplier(models.Model):
-    name = models.CharField(max_length=200)
+    account = models.OneToOneField(User, on_delete=models.CASCADE)
     address = models.CharField(max_length=200)
     phone = models.CharField(max_length=22)
-    email = models.CharField(max_length=22)
+    business_name = models.CharField(max_length=100, blank=True)
+    bio = models.TextField(blank=True, help_text="Business description")
 
     def __str__(self):
         return "%s" % (self.name)
@@ -48,6 +50,9 @@ class Supplier(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
+
+    class Meta:
+        verbose_name_plural = "categories"
 
     def __str__(self):
         return str(self.name)

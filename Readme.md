@@ -25,7 +25,11 @@ backend
 - ( ) create api endpoint to credit management
 - ( ) note that the credits are connected with the booking, rating and reviews
 - ( ) filter bookings by user / api to display bookings and it's status
-- ( ) token authentication
+- ( ) create links to redeem the bookings and use these links to create the qrcodes
+- ( ) list orders for suppliers 
+- ( ) supplier accept and redeem bookings
+- ( ) user : show booking status 
+- ( ) user : show booking history
 - ( ) 
 
 -------------------------------
@@ -62,7 +66,18 @@ frontend
 - ( ) 
 
 -------------------------------
+Notes
+-----
 
 2-- directly connected to creating the auth system
 3-- here Supplier model is not related to the user model 
     maybe it should be so we can take advantage of the models'
+
+
+- use jwt for authentication completely except for admin which is connected to the admin model and
+    may need some apis
+- the difference between user model and the supplier model :
+both have username
+both need email
+both need pass 
+

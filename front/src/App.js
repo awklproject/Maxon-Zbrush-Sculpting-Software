@@ -4,6 +4,7 @@ import { useState,useEffect } from 'react';
 import OffersList from './OffersList';
 import Details from './Details';
 import Login from './UserLogin';
+import SignUpForm from './SignUp';
 
 function checkAuthToken(authTokenName) {
     const authToken = localStorage.getItem(authTokenName);
@@ -48,6 +49,7 @@ if (checkAuthToken("token")) {
               />
 
               <Route path="/login/" element={<Login />} />
+              <Route path="/signup/" element={<SignUpForm />} />
 
                          </Routes>
       </BrowserRouter>
