@@ -1,6 +1,9 @@
 from django.contrib.auth.models import User, AbstractUser
 from django.db import models
+from django.contrib.auth.models import User
 
+
+# the booking period is used for late booking stage, can be ignored for now
 BOOKING_PERIOD = (
     ("5", "5M"),
     ("10", "10M"),
@@ -37,6 +40,8 @@ BOOKING_PERIOD = (
 
 
 # possible : picture and background , website, business license ,
+# now it's not important since the user model became something different
+# and not what it used to be/ not the user model to be
 class Supplier(models.Model):
     account = models.OneToOneField(User, on_delete=models.CASCADE)
     address = models.CharField(max_length=200)
@@ -108,3 +113,44 @@ class Offer(models.Model):
 
     def __str__(self):
         return "%s(%s)" % (self.title, self.supplier.name)
+
+class Booking(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    date = models.DateField()
+    offer = models.ForeignKey(Offer, on_delete=models.RESTRICT)
+    time = models.TimeField()
+    username = models.CharField(max_length=100)
+    user_email = models.EmailField()
+    user_mobile = models.CharField(max_length=20)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    approved = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.user.username}'s booking on {self.date} at {self.time}"
+
+# NOTE: since admin models require this , this should be migrated first
+# this is from the accounting app
+
+class User(AbstractUser):
+    is_customer = models.BooleanField(default=False)
+    is_supplier = models.BooleanField(default=False)
+
+
+class CustomerUser(User):
+    preferred_item = models.CharField(max_length=100)
+
+    def save(self, *args, **kwargs):
+        self.is_customer = True
+        super().save(*args, **kwargs)
+
+
+class SupplierUser(User):
+    address = models.CharField(max_length=200)
+    business_name = models.CharField(max_length=200)
+    bio = models.TextField(blank = True, help_text="Business description")
+
+    def save(self, *args, **kwargs):
+        self.is_supplier = True
+        super().save(*args, **kwargs)
