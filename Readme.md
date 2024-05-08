@@ -1,5 +1,15 @@
 ## TODO:
 ---------
+  
+the first version of the application is the following : login as supplier or customer  
+customer see offers and create orders  
+supplier create offers/part of the offers data  
+and redeem orders using qrcode/link  
+   
+
+a complete rewrite in 10 days be:
+---------------------------------
+- authenticate as 2 types of users (accounts)
 
 for chat.openai.com 
 ------------------
@@ -7,7 +17,9 @@ what would be the step by step guide to create this system?
 - i want to create a booking system for tourist activities and tours 
 Creating a booking system for tourist activities and tours using Django and React is an excellent choice due to the robustness and scalability of Django for backend services and React's reactive and component-driven interface for the frontend. Here's a suggested path to follow, along with the key Django apps you might need and the main React components to consider:
 
+
 ### Django Backend
+
 
 **1. Project Structure**:
    - **Core**: A core app for fundamental shared models or utilities.
@@ -16,11 +28,13 @@ Creating a booking system for tourist activities and tours using Django and Reac
    - **Bookings**: Manages bookings, booking dates, user references, and payment status.
    - **Payments**: Handles payment processing integration, such as using Stripe or PayPal.
 
+
 **2. Key Models and Features**:
    - **User**: Custom user model extending `AbstractUser` for authentication and authorization.
    - **Activity**: Model to store information about different tours and activities. Includes fields like title, description, price, duration, guide information, etc.
    - **Booking**: Model linking users to the activities they’ve booked with fields like date, number of participants, and status (e.g., confirmed, pending, cancelled).
    - **Payment**: Manages payment details and history.
+
 
 **3. Essential Django Features**:
    - **Django REST Framework**: For building a RESTful API that your React frontend will consume.
