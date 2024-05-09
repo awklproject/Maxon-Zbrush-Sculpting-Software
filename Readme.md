@@ -9,7 +9,7 @@ and redeem orders using qrcode/link
 
 a complete rewrite in 10 days be:
 ---------------------------------
-- authenticate as 2 types of users (accounts)
+- star
 
 for chat.openai.com 
 ------------------

@@ -24,21 +24,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',
-    'rest_framework',
-    'account',
-    'listing',
-    'booking',
-    'api',
 ]
 
-
-REST_FRAMEWORK = {
-        'DEFAULT_AUTHENTICATION_CLASSES': [
-            'rest_framework.authentication.TokenAuthentication',
-            'rest_framework_simplejwt.authentication.JWTAuthentication',
-            ]
-        }
 MEDIA_ROOT = ''
 CORS_ORIGIN_ALLOW_ALL = DEBUG
 CORS_ALLOW_CREDENTIALS = False
