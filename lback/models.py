@@ -19,3 +19,4 @@ class SupplierUser(User):
     def save(self, *args, **kwargs):
         self.is_supplier = True
         super().save(*args, **kwargs)
+

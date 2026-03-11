@@ -11,7 +11,7 @@ function Signup() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await axios.post('http://localhost:8000/api/register/', { username, password });
+            await axios.post('http://localhost:8000/register/', { username, password });
             navigate('/login');
         } catch (error) {
             console.error('Signup failed:', error);

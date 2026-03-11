@@ -16,7 +16,7 @@ function Login() {
         axios.defaults.xsrfCookieName = 'csrftoken';
         axios.defaults.xsrfHeaderName = 'X-CSRFToken';
         try {
-            const response = await axios.post('http://localhost:8000/api/token/', { username, password });
+            const response = await axios.post('http://localhost:8000/login/', { username, password });
             setAuth({ token: response.data.access, user: { username } });
             navigate('/dashboard');
         } catch (error) {

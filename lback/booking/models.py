@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from listing.models import Offer
 
 
+
 class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateField()

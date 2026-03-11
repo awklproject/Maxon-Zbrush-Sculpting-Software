@@ -146,6 +146,7 @@ class CustomerUser(User):
         super().save(*args, **kwargs)
 
 
+
 class SupplierUser(User):
     address = models.CharField(max_length=200)
     business_name = models.CharField(max_length=200)

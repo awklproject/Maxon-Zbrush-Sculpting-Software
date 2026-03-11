@@ -9,10 +9,26 @@ and redeem orders using qrcode/link
 
 a complete rewrite in 10 days be:
 ---------------------------------
-- star
+base
+====
+- start by authentication of users/ builid a drable auth (60days)
+- create user roles/groups (use the premade ones ?) 
+- admin creates offers
+- offers displayed for users of one group and the other not
+- the other group got displayed only their offers 
+- the other group can edit their offers / special form
+- one group can create order
+- the other group can accept order
 
+extra
+=====
+- start implementing the extra features (calendar , qrcode...)
+
+
+
+-------------------
 for chat.openai.com 
-------------------
+-------------------
 what would be the step by step guide to create this system? 
 - i want to create a booking system for tourist activities and tours 
 Creating a booking system for tourist activities and tours using Django and React is an excellent choice due to the robustness and scalability of Django for backend services and React's reactive and component-driven interface for the frontend. Here's a suggested path to follow, along with the key Django apps you might need and the main React components to consider:
